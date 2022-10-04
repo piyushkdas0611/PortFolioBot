@@ -12,11 +12,11 @@ def start(update: Update, context: CallbackContext):
 
 def help(update: Update, context: CallbackContext):
     update.message.reply_text("""Available Commands :- 
-    /github - To get the github link
-    /linkedin - To get the LinkedIn profile
+    /github - To see my other repos
+    /linkedin - To see my LinkedIn page
     /gmail - To write me
-    /instagram - To connect with me
-    other info that you want to give""")
+    /instagram - To have a glance of my life
+    /twitter - To see my views of the world issues""")
 
 def gmail_url(update: Update, context: CallbackContext):
     update.message.reply_text("mailto:your_email_ID")
@@ -28,7 +28,10 @@ def github_url(update: Update, context: CallbackContext):
     update.message.reply_text("link to github")
 
 def instagram_url(update: Update, context: CallbackContext):
-    update.message.reply_text("link to instagram")    
+    update.message.reply_text("link to instagram")
+    
+def twitter_url(update: Update, context: CallbackContext):
+  update.message.reply_text("https://twitter.com/Piyush_k_das")    
 
 def unknown(update: Update, context: CallbackContext):
     update.message.reply_text("Sorry '%s' is not a valid command" % update.message.text)
@@ -43,6 +46,7 @@ updater.dispatcher.add_handler(CommandHandler('github', github_url))
 updater.dispatcher.add_handler(CommandHandler('linkedin', linkedin_url))
 updater.dispatcher.add_handler(CommandHandler('gmail', gmail_url))
 updater.dispatcher.add_handler(CommandHandler('instagram', instagram_url))
+updater.dispatcher.add_handler(CommandHandler('twitter', twitter_url))
 updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown))
 updater.dispatcher.add_handler(MessageHandler(Filters.command, unknown))
 updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown_text))
