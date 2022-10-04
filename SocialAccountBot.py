@@ -31,7 +31,7 @@ def instagram_url(update: Update, context: CallbackContext):
     update.message.reply_text("link to instagram")
     
 def twitter_url(update: Update, context: CallbackContext):
-  update.message.reply_text("https://twitter.com/Piyush_k_das")    
+  update.message.reply_text("link to twitter account")    
 
 def unknown(update: Update, context: CallbackContext):
     update.message.reply_text("Sorry '%s' is not a valid command" % update.message.text)
