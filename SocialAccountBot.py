@@ -5,10 +5,10 @@ from telegram.ext.commandhandler import CommandHandler
 from telegram.ext.messagehandler import MessageHandler
 from telegram.ext.filters import Filters
 
-updater = Updater("Your Bot API that you got from BotFather", use_context=True)
+updater = Updater("5702915154:AAGKDnXkNVFfSRg87zIZ2vX_fHr2MKnQHis", use_context=True)
 
 def start(update: Update, context: CallbackContext):
-    update.message.reply_text("Hello, I am the portfolio bot of\n Your Name\n For help about commands type or click /help")
+    update.message.reply_text("Hello, I am the portfolio bot of\n Piyush Kumar Das\n For help about commands type or click /help")
 
 def help(update: Update, context: CallbackContext):
     update.message.reply_text("""Available Commands :- 
