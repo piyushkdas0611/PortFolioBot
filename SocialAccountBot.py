@@ -5,11 +5,13 @@ from telegram.ext.commandhandler import CommandHandler
 from telegram.ext.messagehandler import MessageHandler
 from telegram.ext.filters import Filters
 
-updater = Updater("5702915154:AAGKDnXkNVFfSRg87zIZ2vX_fHr2MKnQHis", use_context=True)
+updater = Updater("Bot API", use_context=True)
 
+#start message
 def start(update: Update, context: CallbackContext):
-    update.message.reply_text("Hello, I am the portfolio bot of\n Piyush Kumar Das\n For help about commands type or click /help")
+    update.message.reply_text("Hello, I am the portfolio bot of\n Your Name\n For help about commands type or click /help")
 
+#help message
 def help(update: Update, context: CallbackContext):
     update.message.reply_text("""Available Commands :- 
     /github - To see my other repos
@@ -18,23 +20,37 @@ def help(update: Update, context: CallbackContext):
     /instagram - To have a glance of my life
     /twitter - To see my views of the world issues""")
 
+#gmail url
+
 def gmail_url(update: Update, context: CallbackContext):
     update.message.reply_text("mailto:your_email_ID")
+
+#linkedIn handle
 
 def linkedin_url(update: Update, context: CallbackContext):
     update.message.reply_text("link to linkedIn")
 
+#github_url    
+
 def github_url(update: Update, context: CallbackContext):
     update.message.reply_text("link to github")
 
+#instagram link
+
 def instagram_url(update: Update, context: CallbackContext):
     update.message.reply_text("link to instagram")
-    
+
+#twitter link
+
 def twitter_url(update: Update, context: CallbackContext):
   update.message.reply_text("link to twitter account")    
 
+#update message if anyone used a wrong command
+
 def unknown(update: Update, context: CallbackContext):
     update.message.reply_text("Sorry '%s' is not a valid command" % update.message.text)
+
+#message to handle errrors
 
 def unknown_text(update: Update, context: CallbackContext):
     update.message.reply_text("Sorry I can't recognize you, you said '%s'" % update.message.text)
